@@ -1,0 +1,186 @@
+.productContainer {
+    width: 100%;
+}
+
+/* Ebook Strip (Section 1) */
+.section1 {
+    background-color: var(--bg-color3);
+    /* Taupe Band */
+    color: var(--text-color2);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    padding: 0;
+    /* Full width */
+}
+
+.productContent1 {
+    /* Image side */
+    height: 100%;
+}
+
+.productImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.productContent2 {
+    padding: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.productText>p:first-child {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.section1 .title h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.productText>p:last-of-type {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.productEmailField {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.productEmailField input {
+    padding: 1rem;
+    background: transparent;
+    /* Or slight white */
+    border: 1px solid var(--text-color2);
+    flex: 1;
+    min-width: 200px;
+    font-family: inherit;
+    color: var(--text-color2);
+}
+
+.productEmailField button {
+    background-color: var(--text-color2);
+    /* Dark button */
+    color: var(--text-color-white);
+    border: 1px solid var(--text-color2);
+    padding: 1rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.priceContainer {
+    margin-top: 1rem;
+}
+
+.priceContainer h1 {
+    font-family: "Crimson Text", serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.priceContainer p:first-of-type {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0.5rem 0;
+}
+
+/* About the Book (Section 2) */
+.section2 {
+    padding: 6rem 5%;
+    background-color: var(--bg-color);
+    /* Back to Milk */
+}
+
+.section2 .title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section2 .title h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.section2 .title p {
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+.videoContainer {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto 5rem auto;
+    background-color: var(--bg-color2);
+}
+
+.videoContainer iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.bookGridItems {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.bookGridItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.bookGridItem img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1.5rem;
+    /* Ideally style as accent color via filter if SVG, or assume correct asset */
+}
+
+.bookGridItem h1 {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.bookGridItem p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .section1 {
+        grid-template-columns: 1fr;
+    }
+
+    .productImage {
+        height: 300px;
+    }
+
+    .bookGridItems {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .bookGridItems {
+        grid-template-columns: 1fr;
+    }
+}

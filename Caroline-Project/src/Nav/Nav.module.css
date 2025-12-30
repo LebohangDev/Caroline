@@ -1,0 +1,52 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--bg-color);
+    color: var(--text-color2);
+}
+
+.nav h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.8rem;
+    color: var(--text-color2);
+    margin: 0;
+}
+
+.nav ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-color2);
+    font-family: "Crimson Text", serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+.active a {
+    color: var(--accent-color) !important;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 1rem 2rem;
+    }
+
+    .nav ul {
+        display: none;
+        /* Placeholder for mobile menu logic if needed, or just standard responsive stack */
+    }
+}

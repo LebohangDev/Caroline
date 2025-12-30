@@ -1,0 +1,88 @@
+.footerContainer {
+    background-color: var(--bg-color3);
+    /* Taupeish band */
+    color: var(--text-color2);
+    padding: 4rem 5% 1rem 5%;
+}
+
+.footerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.footerContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.signatureContainer h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.media {
+    text-align: center;
+}
+
+.media p {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.footerNav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.footerNav a {
+    text-decoration: none;
+    color: var(--text-color2);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: opacity 0.3s;
+}
+
+.footerNav a:hover {
+    opacity: 0.6;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--text-color2);
+    opacity: 0.1;
+    margin-bottom: 1rem;
+}
+
+.footerContainer>p {
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .footerContent {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .footerNav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
