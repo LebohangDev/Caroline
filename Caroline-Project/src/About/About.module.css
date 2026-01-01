@@ -1,10 +1,17 @@
 .aboutContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Text left, Image right */
-    gap: 4rem;
-    padding: 6rem 5%;
-    background-color: var(--bg-color);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    padding-top: 0;
+    margin: 0 auto;
+    height: 100%;
+    width: 95%;
+    max-width: 1600px;
+
+
+    align-items: start;
 }
 
 .aboutContent1 {
@@ -15,35 +22,37 @@
 
 .title {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
 .title h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     color: var(--text-color2);
     white-space: nowrap;
+    margin: 0;
 }
 
 .title hr {
-    flex: 1;
+    width: 100%;
     border: 0;
-    border-top: 1px solid var(--accent-color);
-    /* Thin accent line */
-    opacity: 0.5;
+    margin-top: 2rem;
+    border-top: 1px solid black;
+
+    opacity: 0.6;
 }
 
 .aboutText p {
     font-size: 1.2rem;
     line-height: 1.8;
-    max-width: 90%;
+    letter-spacing: 1px;
     margin-bottom: 2.5rem;
     color: var(--text-color2);
 }
 
 .aboutText span {
-    font-style: italic;
+
     color: var(--accent-color);
 }
 
@@ -54,13 +63,20 @@
 }
 
 .aboutButtons button:first-child {
-    /* Get in Touch - Outline */
-    border: 1px solid var(--text-color2);
-    padding: 0.8rem 2rem;
+    border: 3px solid var(--accent-color2);
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: transparent;
+
+
+    color: var(--text-color2);
+    font-family: "Crimson Text", serif;
+    font-size: 1rem;
 }
 
 .aboutButtons button:last-child {
-    /* Portfolio - Filled */
+
     background-color: var(--accent-color);
     border: 1px solid var(--accent-color);
     color: var(--text-color-white);
@@ -126,14 +142,4 @@
     border-radius: 2px;
 }
 
-@media (max-width: 900px) {
-    .aboutContainer {
-        grid-template-columns: 1fr;
-        padding: 3rem 5%;
-    }
-
-    .aboutImage {
-        height: 300px;
-        margin-top: 2rem;
-    }
-}
+@media (max-width: 767px) {}

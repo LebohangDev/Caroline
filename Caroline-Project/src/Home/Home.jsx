@@ -39,9 +39,9 @@ const Home = () => {
                 <div className={styles.homeSocials}>
                     <hr className={styles.line1} />
                     <div className={styles.socialsContainer}>
-                        <i class="ri-instagram-line"></i>
-                        <i class="ri-youtube-line"></i>
-                        <i class="ri-facebook-line"></i>
+                        <i className="ri-instagram-line"></i>
+                        <i className="ri-youtube-line"></i>
+                        <i className="ri-facebook-circle-fill"></i>
                     </div>
                     <hr className={styles.line2} />
                 </div>

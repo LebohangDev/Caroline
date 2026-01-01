@@ -2,13 +2,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5%;
+    padding-top: 1rem;
     background-color: var(--bg-color);
     color: var(--text-color2);
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    max-width: 1400px;
 }
 
-.nav h1 {
-    font-family: "Dancing Script", cursive;
+.nav p {
+
     font-size: 1.8rem;
     color: var(--text-color2);
     margin: 0;
@@ -20,15 +24,16 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    padding-right: 6rem;
 }
 
 .nav a {
     text-decoration: none;
     color: var(--text-color2);
     font-family: "Crimson Text", serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 4px;
     transition: color 0.3s ease;
 }
 
@@ -40,13 +45,93 @@
     color: var(--accent-color) !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .nav {
-        padding: 1rem 2rem;
+
+        width: 90%;
     }
 
     .nav ul {
         display: none;
-        /* Placeholder for mobile menu logic if needed, or just standard responsive stack */
+        padding-right: 0;
+
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
+    .nav {
+
+        width: 90%;
+    }
+
+    .nav p {
+        font-size: 1.4rem;
+    }
+
+    .nav a {
+        font-size: 0.8rem;
+    }
+
+    .nav ul {
+
+        padding-right: 0;
+
+    }
+}
+
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
+    .nav {
+
+        width: 90%;
+    }
+
+    .nav p {
+        font-size: 1.4rem;
+    }
+
+    .nav a {
+        font-size: 0.8rem;
+    }
+
+    .nav ul {
+
+        padding-right: 0;
+
+    }
+}
+
+
+/* iPad Pro PORTRAIT only */
+@media only screen and (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait) {
+    .nav {
+        width: 90%;
+    }
+
+    .nav ul {
+
+        padding-right: 0;
+
+    }
+
+}
+
+
+/* iPad Pro LANDSCAPE only */
+@media only screen and (device-width: 1366px) and (device-height: 1024px) and (orientation: landscape) {
+
+    .nav {
+        width: 95%;
+    }
+
+    .nav ul {
+
+        padding-right: 5rem;
+
     }
 }

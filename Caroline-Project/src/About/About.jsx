@@ -33,7 +33,7 @@ const About = () => {
                         <h1>About Me</h1>
                         <hr />
                     </div>
-                    <p>I’m Caroline Labouchere, a British-born <span>model</span>, wellness advocate, and lifestyle creator living life unapologetically and beautifully at <span>every age</span>. I began modelling at age 54, proving that confidence, curiosity, and joy don’t come with an<span>expiry date</span>.</p>
+                    <p>I’m Caroline Labouchere, a British-born <span>model</span>, wellness advocate, and lifestyle creator living life unapologetically and beautifully at <span>every age</span>. I began modelling at age 54, proving that confidence, curiosity, and joy don’t come with an <span>expiry date</span>.</p>
 
 
                 </div>

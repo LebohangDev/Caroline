@@ -20,11 +20,12 @@
     width: 100%;
     height: 100%;
 
+
 }
 
 .imgContainer {
     width: 100%;
-    height: 40rem;
+    height: 45rem;
     overflow: hidden;
 }
 
@@ -61,7 +62,7 @@
     background: var(--bg-color);
 
     color: var(--text-color2);
-    font-size: 1.5rem;
+    font-size: 2rem;
     cursor: pointer;
     padding: 1.5rem;
     transition: all 0.3s;
@@ -81,9 +82,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12rem;
+    height: 100%;
 
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+
 
 }
 
@@ -97,7 +100,7 @@
     font-size: 0.9rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--text-color2);
+    color: #A29F9F;
     font-weight: 600;
 }
 
@@ -125,68 +128,322 @@
 }
 
 .homeButton1 {
-    /* Outline */
-    border: 1px solid var(--text-color2);
-    padding: 0.8rem 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+
+    border: 3px solid var(--accent-color2);
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: transparent;
+
+
     color: var(--text-color2);
+    font-family: "Crimson Text", serif;
+    font-size: 1rem;
 }
 
 .homeButton2 {
-    /* Filled */
+
     background-color: var(--accent-color2);
-    /* Mocha/Darker */
-    border: 1px solid var(--accent-color2);
+    border: none;
+
     color: var(--text-color-white);
-    padding: 0.8rem 2rem;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+
 }
 
 .homeSocials {
-    margin-top: 4rem;
+
     display: flex;
+    flex-direction: column;
+    justify-items: center;
     align-items: center;
-    gap: 1rem;
+    padding-right: 2rem;
+    gap: 0.5rem;
     color: var(--accent-color);
 }
 
 .socialsContainer {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 1rem;
     font-size: 1.2rem;
+}
+
+
+
+.socialsContainer i {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.socialsContainer i:hover {
+    color: var(--accent-color2);
+    cursor: pointer;
 }
 
 .line1 {
 
-    color: black;
-    width: 100%;
+
+    height: 20%;
+    border: 1px solid black;
+    opacity: 0.5;
+    transform: rotate(180deg);
 
 }
 
-@media (max-width: 900px) {
+.line2 {
+
+    height: 100%;
+    opacity: 0.5;
+    border: 1px solid black;
+    transform: rotate(180deg);
+}
+
+@media (max-width: 767px) {
     .homecontainer {
-        grid-template-columns: 1fr;
-        max-width: 800px;
+        grid-template-columns: minmax(100%, 1fr);
+        justify-items: center;
+
+
+
+        width: 90%;
 
         text-align: center;
     }
 
+    .imgContainer {
+
+        height: 30rem;
+
+    }
+
+    .homecontent2 {
+        display: grid;
+        grid-template-columns: minmax(100%, 1fr);
+        gap: 2rem;
+
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+
+    }
+
     .keywords {
         justify-content: center;
+        gap: 2rem;
+    }
+
+
+    .keywords p {
+        font-size: 1rem;
+    }
+
+    .name {
+        text-align: center;
+    }
+
+    .name h1 {
+        font-size: 6rem;
+    }
+
+    .name h1:nth-child(2) {
+        margin-left: 0;
     }
 
     .homeButtons {
         justify-content: center;
     }
 
-    .homecontent1 {
-        max-height: 50vh;
+    .homeSocials .socialsContainer {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .imgControls {
+        left: 50px;
+        right: 50px;
+
+    }
+
+
+    .homeSocials .socialsContainer i {
+        font-size: 2.4rem;
+    }
+
+    .homeSocials .line1 {
+        display: none;
+    }
+
+    .homeSocials .line2 {
+        display: none;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
+    .homecontainer {
+        grid-template-columns: minmax(100%, 1fr);
+        max-width: 1200px;
+        width: 90%;
+
+        text-align: center;
+    }
+
+    .imgContainer {
+
+        height: 40rem;
+    }
+
+    .imgContainer .imgItems img {
+        width: 100%;
+        height: 60rem;
+
+    }
+
+    .homecontent2 {
+        display: grid;
+        grid-template-columns: minmax(100%, 1fr);
+        gap: 0;
+
+
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+
+    }
+
+    .keywords {
+        justify-content: center;
+        gap: 5rem;
+    }
+
+
+    .keywords p {
+        font-size: 1rem;
+    }
+
+    .name {
+        text-align: center;
     }
 
     .name h1 {
-        font-size: 3rem;
+        font-size: 7rem;
+    }
+
+    .name h1:nth-child(2) {
+        margin-left: 0;
+    }
+
+    .homeButtons {
+        justify-content: center;
+    }
+
+    .homeSocials .socialsContainer {
+        flex-direction: row;
+    }
+
+
+    .homeSocials .socialsContainer i {
+        font-size: 2rem;
+    }
+
+    .homeSocials .line1 {
+        display: none;
+    }
+
+    .homeSocials .line2 {
+        display: none;
+    }
+
+
+
+
+
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
+    .homecontainer {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+        width: 90%;
+
+    }
+
+    .homecontent2 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+
+    }
+
+    .homeSocials {
+        margin-top: 2rem;
+    }
+
+    .homeSocials .socialsContainer {
+        flex-direction: row;
+    }
+
+
+    .homeSocials .socialsContainer i {
+        font-size: 1.5rem;
+    }
+
+    .homeSocials .line1 {
+        display: none;
+    }
+
+    .homeSocials .line2 {
+        display: none;
+    }
+
+
+
+
+}
+
+
+/* iPad Pro LANDSCAPE only */
+@media only screen and (device-width: 1366px) and (device-height: 1024px) and (orientation: landscape) {
+
+    .homecontainer {
+
+        width: 95%;
+
+    }
+}
+
+
+/* iPad Pro PORTRAIT only */
+@media only screen and (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait) {
+    .imgContainer {
+        height: 50rem;
+    }
+
+    .imgControls {
+        left: 30px;
+
+
+    }
+
+    .imgControls button {
+        font-size: 2rem;
+    }
+
+    .name h1 {
+        font-size: 8rem;
+    }
+
+    .homecontent2 {
+        gap: 4rem
     }
 }

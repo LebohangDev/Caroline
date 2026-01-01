@@ -5,7 +5,7 @@ import styles from './Gallery.module.css'
 const Gallery = () => {
     return (
         <div id="gallery" className={styles.container}>
-            <h2>A Gallery of My Activities</h2>
+            <h1>A Gallery of My Activities</h1>
             <ResponsiveMasonry
                 columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
             >

@@ -4,7 +4,7 @@ import styles from './Nav.module.css'
 const Nav = ({ activeNav, setActiveNav }) => {
     return (
         <nav className={styles.nav}>
-            <h1>@CGC</h1>
+            <p>@CGC</p>
             <ul>
                 <li className={activeNav === 'Home' ? styles.active : ''}>
                     <a href="#home" onClick={() => setActiveNav('Home')}>Home</a>

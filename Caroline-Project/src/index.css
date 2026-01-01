@@ -2,109 +2,103 @@
 @import url('https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css');
 
 :root {
-  /* Global Variables */
   --bg-color: #FBF7F4;
-  /* Milk */
   --bg-color2: #E5DED2;
-  /* Oat */
   --bg-color3: #D8CFC4;
-  /* Adjusted Taupe for bands (lighter than accent) - User said Taupe band, accent is #A39382. Let's use #A39382 for accent, maybe a lighter taupe for bg3 if needed, or stick to provided. User said "var(--bg-color3) (Taupe band...)" in prompt 2 description, but previously defined it. I will keep the previous definition closest to request. Step 38 defined --bg-color3: #A39382. This might be too dark for background content to be legible with charcoal text, but user said "Product strip... content + email... CTA". If text is charcoal, background must be light. If background is #A39382 (dark taupe), text must be light. User said "Copy stays light and editorial". Okay, I will respect the variables. */
   --bg-color3: #DCCFB8;
-  /* Custom override for "Taupe band" if #A39382 is too dark/saturated for background. Let's stick to the user's hex #A39382 if they insisted, but "Copy stays light" implies contrast. Let's assume --bg-color3 is the taupe background. */
-
   --text-color-white: #FBF7F4;
   --text-color2: #232323;
-  /* Charcoal */
-
   --accent-color: #A39382;
-  /* Taupe accent */
   --accent-color2: #685D54;
-  /* Mocha */
-
-  font-size: 16px;
+  font-size: 90%;
   font-family: "Crimson Text", serif;
-  font-optical-sizing: auto;
   font-style: normal;
+  overflow: hidden;
 
-  background-color: var(--bg-color);
-  color: var(--text-color2);
+
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 body {
   margin: 0 auto;
-  background-color: var(--bg-color);
-  color: var(--text-color2);
-  line-height: 1.6;
+
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
   font-family: "Dancing Script", cursive;
   font-weight: 400;
 }
 
-p,
-button,
-input,
-a,
-span,
-li {
-  font-family: "Crimson Text", serif;
+
+
+.app {
+  background-color: var(--bg-color);
+  color: var(--text-color2);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 4rem 1fr 1fr;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100vw;
+  height: 100vh;
+  gap: 0;
+
+  margin: 0 auto;
 }
 
+
 button {
-  cursor: pointer;
-  border: 1px solid var(--accent-color);
-  background: transparent;
-  color: var(--text-color2);
+
   transition: all 0.3s ease;
-  font-size: 1rem;
+
 }
 
 button:hover {
   background-color: var(--accent-color2);
   color: var(--text-color-white);
   border-color: var(--accent-color2);
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-.app {
-  background-color: var(--bg-color);
-  color: var(--text-color2);
-  width: 100%;
-  min-height: 100vh;
-  /* Removed grid constraints to allow flow */
-  display: flex;
-  flex-direction: column;
+  cursor: pointer;
 }
 
 .header {
   width: 100%;
-  position: sticky;
-  top: 0;
   z-index: 1000;
-  background-color: var(--bg-color);
-  /* Maintain opacity on scroll */
+  grid-column: 1 / -1;
 }
 
 .main {
-  flex: 1;
+  grid-column: 1 / -1;
 }
 
 .footer {
   width: 100%;
+  grid-column: 1 / -1;
+}
+
+.app .activeSection {
+  display: block;
+}
+
+.app .notActiveSection {
+  display: none;
+}
+
+
+
+@media (max-width: 767px) {
+
+  :root {
+    font-size: 80%;
+  }
+
+  .app {
+    grid-template-columns: minmax(100%, 1fr);
+    max-width: 100%;
+    justify-items: center;
+
+
+  }
+
 }
