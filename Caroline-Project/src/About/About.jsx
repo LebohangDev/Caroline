@@ -48,11 +48,15 @@ const About = () => {
                                 <div className={styles.item} key={index}>
                                     <div className={styles.header}>
                                         <i className={item.icon}></i>
-                                        <h1>{item.title}</h1>
+                                        <div className={styles.text}>
+                                            <h1>{item.title}</h1>
+                                            <p>{item.text}</p>
+                                        </div>
+
 
                                     </div>
 
-                                    <p>{item.text}</p>
+
                                 </div>
                             )))}
 
@@ -61,7 +65,7 @@ const About = () => {
                 </div>
 
             </div>
-            <div className={styles.aboutGridItem2}>
+            <div className={styles.aboutContent2}>
                 <div className={styles.aboutImage}>
                     <img src="Images/Caroline_Images/about_img.png" alt="" />
                 </div>

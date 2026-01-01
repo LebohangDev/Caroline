@@ -3,12 +3,13 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    background-color: var(--bg-color);
+
     color: var(--text-color2);
     margin: 0 auto;
     height: 100%;
     width: 100%;
     max-width: 1400px;
+
 }
 
 .nav p {
@@ -85,7 +86,7 @@
 
 
 
-@media (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
     .nav {
 
         width: 90%;

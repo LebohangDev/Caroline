@@ -36,7 +36,7 @@ h1 {
   color: var(--text-color2);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 4rem 1fr 1fr;
+  grid-template-rows: 6rem 1fr 1fr;
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;

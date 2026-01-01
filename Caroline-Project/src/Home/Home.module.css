@@ -27,6 +27,7 @@
     width: 100%;
     height: 45rem;
     overflow: hidden;
+
 }
 
 .imgItems {
@@ -123,7 +124,7 @@
 
 .homeButtons {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.5rem;
     margin-top: 2rem;
 }
 
@@ -207,6 +208,8 @@
     .homecontainer {
         grid-template-columns: minmax(100%, 1fr);
         justify-items: center;
+        padding: 0;
+
 
 
 
@@ -259,6 +262,15 @@
         justify-content: center;
     }
 
+    .homeButton2 {
+
+
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+
+    }
+
     .homeSocials .socialsContainer {
         flex-direction: row;
         gap: 2rem;
@@ -308,7 +320,7 @@
     .homecontent2 {
         display: grid;
         grid-template-columns: minmax(100%, 1fr);
-        gap: 0;
+        gap: 5rem;
 
 
         flex-direction: column;
