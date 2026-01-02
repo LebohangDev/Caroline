@@ -34,7 +34,7 @@ const Footer = ({ setActiveNav }) => {
                             <motion.li variants={softFadeUp}><a href="#Home" onClick={() => setActiveNav('Home')}>Home</a></motion.li>
                             <motion.li variants={softFadeUp}><a href="#About" onClick={() => setActiveNav('About')}>About</a></motion.li>
                             <motion.li variants={softFadeUp}><a href="#Product" onClick={() => setActiveNav('Product')}>Product</a></motion.li>
-                            <motion.li variants={softFadeUp}><a href="/Images/Portfolio/My_Portfolio%20_Caroline%20Labouchere.pdf" download onClick={() => setActiveNav('Portfolio')}>Portfolio</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="/Images/Portfolio/My_Portfolio_Caroline_Labouchere.pdf" download onClick={() => setActiveNav('Portfolio')}>Portfolio</a></motion.li>
                             <motion.li variants={softFadeUp}><a href="#Gallery" onClick={() => setActiveNav('Gallery')}>Gallery</a></motion.li>
                         </motion.ul>
                     </div>
