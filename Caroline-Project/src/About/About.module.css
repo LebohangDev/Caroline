@@ -9,7 +9,7 @@
     margin: 0 auto;
     height: 100%;
     width: 95%;
-    max-width: 1600px;
+    max-width: 1400px;
 
 
     align-items: start;
@@ -252,4 +252,15 @@
     }
 
 
+}
+
+
+
+/* iPad Pro PORTRAIT only */
+@media only screen and (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait) {
+    .aboutImage img {
+
+        right: -60%;
+
+    }
 }

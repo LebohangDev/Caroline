@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './About.module.css'
+import { motion } from 'framer-motion';
+import { softFadeUp, containerStagger, lineReveal, buttonHover } from '../animations';
 
 const About = () => {
 
@@ -26,52 +28,58 @@ const About = () => {
         }
     ];
     return (
-        <div id="about" className={styles.aboutContainer}>
+        <motion.div
+            id="about"
+            className={styles.aboutContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={containerStagger}
+        >
             <div className={styles.aboutContent1}>
                 <div className={styles.aboutText}>
                     <div className={styles.title}>
-                        <h1>About Me</h1>
-                        <hr />
+                        <motion.h1 variants={softFadeUp}>About Me</motion.h1>
+                        <motion.hr variants={lineReveal} />
                     </div>
-                    <p>I’m Caroline Labouchere, a British-born <span>model</span>, wellness advocate, and lifestyle creator living life unapologetically and beautifully at <span>every age</span>. I began modelling at age 54, proving that confidence, curiosity, and joy don’t come with an <span>expiry date</span>.</p>
+                    <motion.p variants={softFadeUp}>I’m Caroline Labouchere, a British-born <span>model</span>, wellness advocate, and lifestyle creator living life unapologetically and beautifully at <span>every age</span>. I began modelling at age 54, proving that confidence, curiosity, and joy don’t come with an <span>expiry date</span>.</motion.p>
 
 
                 </div>
-                <div className={styles.aboutButtons}>
-                    <button>Get In Touch</button>
-                    <button>Portfolio</button>
-                </div>
+                <motion.div className={styles.aboutButtons} variants={softFadeUp}>
+                    <motion.button whileHover={buttonHover}>Get In Touch</motion.button>
+                    <motion.button whileHover={buttonHover}>Portfolio</motion.button>
+                </motion.div>
                 <div className={styles.aboutGrid}>
-                    <div className={styles.aboutGridItems}>
+                    <motion.div className={styles.aboutGridItems} variants={containerStagger}>
                         <div className={styles.header}>
                             {aboutItems.map((item, index) => ((
-                                <div className={styles.item} key={index}>
+                                <motion.div className={styles.item} key={index} variants={softFadeUp}>
                                     <div className={styles.header}>
                                         <i className={item.icon}></i>
                                         <div className={styles.text}>
                                             <h1>{item.title}</h1>
                                             <p>{item.text}</p>
                                         </div>
-
-
                                     </div>
-
-
-                                </div>
+                                </motion.div>
                             )))}
 
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
             </div>
             <div className={styles.aboutContent2}>
-                <div className={styles.aboutImage}>
+                <motion.div
+                    className={styles.aboutImage}
+                    variants={softFadeUp}
+                >
                     <img src="Images/Caroline_Images/about_img.png" alt="" />
-                </div>
+                </motion.div>
 
             </div>
-        </div>
+        </motion.div>
     )
 }
 

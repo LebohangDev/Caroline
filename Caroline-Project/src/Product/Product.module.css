@@ -1,17 +1,25 @@
 .productContainer {
     width: 100%;
+
     position: relative;
     z-index: 10;
+    background-color: var(--bg-color3);
+    color: var(--text-color2);
+
+
 }
 
 
 .section1 {
-    background-color: var(--bg-color3);
-    color: var(--text-color2);
+
     display: grid;
     grid-template-columns: 1fr 1.3fr;
-    align-items: center;
+    gap: 2rem;
+    align-items: flex-start;
     padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 1600px;
+
 }
 
 .productContent1 {
@@ -19,6 +27,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+
 }
 
 .productImage img {
@@ -31,32 +40,41 @@
 
 .productContent2 {
     padding: 2rem 5%;
+    padding-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+.productText {
+    display: flex;
+    flex-direction: column;
+}
+
 .productText>p:first-child {
     font-size: 0.9rem;
+    width: fit-content;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 1rem;
     opacity: 0.9;
     background: var(--text-color-white);
-    padding: 0.3rem 0.6rem;
+    padding: 0.8rem 0.6rem;
     display: inline-block;
 }
 
 .section1 .title h1 {
-    font-size: 4rem;
+    font-size: 6rem;
     margin-bottom: 1rem;
+    margin-top: 0;
     line-height: 1.1;
 }
 
 .productText>p:last-of-type {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    margin-top: 0;
     line-height: 1.8;
     letter-spacing: 1px;
     max-width: 600px;
@@ -74,7 +92,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-bottom: 2rem;
+
     width: 90%;
 }
 
@@ -97,34 +115,41 @@
     border: none;
     padding: 1rem;
     width: 100%;
-    font-weight: 600;
+    font-family: inherit;
+    font-weight: 400;
     letter-spacing: 0.1em;
     border-radius: 0;
     transition: background 0.2s ease;
 }
 
 .productEmailField button:hover {
-    background-color: var(--text-color2);
+    background-color: #554c45;
 }
 
 .priceContainer {
     margin-top: 1rem;
+    line-height: 40px;
 }
 
 .priceContainer h1 {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 0;
 }
 
 .priceContainer p:first-of-type {
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 3rem;
+    font-weight: 600;
     margin: 0.5rem 0;
+    color: #222222;
 }
 
 .priceContainer p:last-of-type {
-    font-size: 1rem;
-    opacity: 0.8;
+    font-size: 1.5rem;
+    margin-top: 0;
+
+    color: #4d4d4d;
 }
 
 
@@ -135,11 +160,14 @@
 
 .section2 .title {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 4rem;
 }
 
 .section2 .title h1 {
-    font-size: 4rem;
+    font-size: 6rem;
     margin-bottom: 0.5rem;
 }
 
@@ -147,6 +175,8 @@
     font-size: 1.5rem;
     letter-spacing: 1px;
     font-weight: 600;
+    width: 40%;
+
 }
 
 .videoContainer {
@@ -167,23 +197,22 @@
 
 .bookGridItems {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    max-width: 1600px;
     gap: 2.5rem;
 }
 
 .bookGridItem {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     padding: 1rem;
     border-radius: 0;
     transition: transform 0.25s ease;
 }
 
-.bookGridItem:hover {
-    transform: translateY(-4px);
-}
 
 .bookGridItem img {
     width: 60px;
@@ -208,19 +237,46 @@
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
     .section1 {
         display: flex;
         flex-direction: column;
         padding: 2rem 0;
+        text-align: center;
         align-items: flex-start;
     }
 
     .productContent1,
     .productContent2 {
         display: contents;
+
     }
+
+    .bookGridItems {
+        display: grid;
+        grid-template-columns: minmax(100%, 1fr);
+    }
+
+    .productText {
+        align-items: center;
+    }
+
+    .section1 .title h1 {
+        font-size: 4rem;
+    }
+
+
+
+    .section2 .title h1 {
+        font-size: 5rem;
+    }
+
+    .section2 .title p {
+        font-size: 1.5rem;
+        width: 70%;
+    }
+
 
     .productText {
         order: 1;
@@ -243,16 +299,29 @@
     .priceContainer {
         order: 4;
         padding: 0 5%;
+
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
-        width: 100%;
+        width: 90%;
+
     }
 
     .priceContainer h1,
     .priceContainer p {
         margin-left: 0;
         text-align: left;
+    }
+
+    .priceContainer p:last-of-type {
+        font-size: 1rem;
+        text-align: center;
+        align-self: center;
+
+    }
+
+    .bookGridItem p {
+        font-size: 1.2rem;
     }
 }

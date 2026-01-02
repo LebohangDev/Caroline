@@ -1,42 +1,49 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
+import { softFadeIn, softFadeUp, containerStagger } from '../animations';
 
 const Footer = ({ setActiveNav }) => {
     return (
-        <div className={styles.footerContainer}>
+        <motion.div
+            className={styles.footerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={softFadeIn}
+        >
             <div className={styles.footerWrapper}>
-                <div className={styles.footerContent}>
-                    <div className={styles.signatureContainer}>
+                <motion.div
+                    className={styles.footerContent}
+                    variants={containerStagger}
+                >
+                    <motion.div className={styles.signatureContainer} variants={softFadeUp}>
                         <h1>@CGC</h1>
-                    </div>
-                    <div className={styles.media}>
+                    </motion.div>
+                    <motion.div className={styles.media} variants={softFadeUp}>
                         <p>Media</p>
-                        <div className={styles.socialIcons}>
-                            <i className="ri-instagram-line" style={{ color: 'var(--accent-primary)' }}></i>
-                            <i className="ri-linkedin-fill" style={{ color: 'var(--accent-primary)' }}></i>
-                            <i className="ri-youtube-line" style={{ color: 'var(--accent-primary)' }}></i>
-                        </div>
-                    </div>
+                        <motion.div className={styles.socialIcons} variants={containerStagger}>
+                            <motion.i variants={softFadeIn} whileHover={{ scale: 1.1, rotate: 3 }} className="ri-instagram-line"></motion.i>
+                            <motion.i variants={softFadeIn} whileHover={{ scale: 1.1, rotate: 3 }} className="ri-facebook-fill"></motion.i>
+                            <motion.i variants={softFadeIn} whileHover={{ scale: 1.1, rotate: 3 }} className="ri-youtube-line"></motion.i>
+                        </motion.div>
+                    </motion.div>
                     <div className={styles.footerNav}>
-                        <ul>
-                            <li><a href="#Home" onClick={() => setActiveNav('Home')}>Home</a></li>
-                            <li><a href="#About" onClick={() => setActiveNav('About')}>About</a></li>
-                            <li><a href="#Product" onClick={() => setActiveNav('Product')}>Product</a></li>
-                            <li><a href="#Portfolio" onClick={() => setActiveNav('Portfolio')}>Portfolio</a></li>
-                            <li><a href="#Gallery" onClick={() => setActiveNav('Gallery')}>Gallery</a></li>
-                        </ul>
+                        <motion.ul variants={containerStagger}>
+                            <motion.li variants={softFadeUp}><a href="#Home" onClick={() => setActiveNav('Home')}>Home</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="#About" onClick={() => setActiveNav('About')}>About</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="#Product" onClick={() => setActiveNav('Product')}>Product</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="#Portfolio" onClick={() => setActiveNav('Portfolio')}>Portfolio</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="#Gallery" onClick={() => setActiveNav('Gallery')}>Gallery</a></motion.li>
+                        </motion.ul>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
-            <hr />
-            <p>© 2025 Caroline Labouchere. All rights reserved.| www.creatorsblueprint.net</p>
-
-
-
-
-        </div>
+            <motion.hr variants={softFadeIn} />
+            <motion.p variants={softFadeIn}>© 2025 Caroline Labouchere. All rights reserved.| www.creatorsblueprint.net</motion.p>
+        </motion.div>
     );
 };
 

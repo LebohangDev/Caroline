@@ -1,6 +1,8 @@
 .container {
     padding: 6rem 5%;
     background-color: var(--bg-color);
+    margin: 0 auto;
+    max-width: 1600px;
 }
 
 .container h1 {
@@ -33,4 +35,10 @@
 
 .gridItem:hover .galleryImage {
     transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 3rem;
+    }
 }
