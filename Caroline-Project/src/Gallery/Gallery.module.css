@@ -5,32 +5,32 @@
 
 .container h1 {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 3rem;
     color: var(--text-color2);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
 .gridItem {
+    position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1.2;
-    /* Portrait ratio */
     overflow: hidden;
     background-color: var(--bg-color2);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.gridItem img {
+.galleryImage {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    display: block;
+    height: auto;
+    transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.gridItem:hover img {
-    transform: scale(1.03);
+.gridItem:hover {
+    transform: translateY(-5px);
+}
+
+.gridItem:hover .galleryImage {
+    transform: scale(1.08);
 }
