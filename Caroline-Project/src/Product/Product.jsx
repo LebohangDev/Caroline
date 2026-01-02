@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './Product.module.css'
+import { motion } from 'framer-motion'
+import styles from './test.module.css'
 
 const bookLearnings =
     [
@@ -25,65 +26,101 @@ const bookLearnings =
         }
     ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+}
+
+const stagger = {
+  show: {
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+}
+
 const Product = () => {
+  return (
+    <div id="product" className={styles.productContainer}>
 
+      {/* SECTION 1 */}
+      <motion.div
+        className={styles.section1}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeUp}
+      >
+        <motion.div className={styles.productContent1} variants={fadeUp}>
+          <motion.div
+            className={styles.productImage}
+            // whileHover={{ scale: 1.02 }}
+            // transition={{ duration: 0.3 }}
+          >
+            <img src="Images/Caroline_Images/ebook_cover2.png" alt="Ebook cover" />
+          </motion.div>
+        </motion.div>
 
-
-    return (
-        <div id="product" className={styles.productContainer}>
-            <div className={styles.section1}>
-                <div className={styles.productContent1}>
-                    <div className={styles.productImage}>
-                        <img src="Images/Caroline_Images/product_img.png" alt="" />
-                    </div>
-                </div>
-
-                <div className={styles.productContent2}>
-                    <div className={styles.productText}>
-                        <p>EBOOK</p>
-                        <div className={styles.title}>
-                            <h1>Becoming Visible at Any Age</h1>
-                        </div>
-                        <p>guide to owning your presence, personal style, and confidence, no matter where you are in life</p>
-
-                    </div>
-                    <div className={styles.productEmailField}>
-                        <input type="text" placeholder="Enter your email" />
-                        <button>GET STARTED NOW!</button>
-                    </div>
-                    <div className={styles.priceContainer}>
-                        <h1>Price</h1>
-                        <p>$15</p>
-                        <p>After payment, eBook will be sent to given email</p>
-                    </div>
-                </div>
-
+        <motion.div className={styles.productContent2} variants={fadeUp}>
+          <div className={styles.productText}>
+            <p>E-BOOK</p>
+            <div className={styles.title}>
+              <h1>Becoming Visible at Any Age</h1>
             </div>
-            <div className={styles.section2}>
-                <div className={styles.title}>
-                    <h1>About the book</h1>
-                    <p>Inside the Pages: Confidence, Visibility, and Self-Expression</p>
-                </div>
-                <div className={styles.videoContainer}>
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"></iframe>
-                </div>
-                <div className={styles.bookGrid}>
-                    <div className={styles.bookGridItems}>
-                        {bookLearnings.map((item, index) => (
-                            <div className={styles.bookGridItem} key={index}>
-                                <img src={item.svg} alt={item.title} />
-                                <h1>{item.title}</h1>
-                                <p>{item.text}</p>
-                            </div>
-                        ))}
+            <p>A guide to owning your presence, personal style, and confidence, no matter where you are in life</p>
+          </div>
 
-                    </div>
-                </div>
-            </div>
+          <motion.div className={styles.productEmailField} variants={fadeUp}>
+            <input type="text" placeholder="Enter your email" />
+            <button>GET STARTED NOW!</button>
+          </motion.div>
 
+          <motion.div className={styles.priceContainer} variants={fadeUp}>
+            <h1>Price</h1>
+            <p>$15</p>
+            <p>After payment, eBook will be sent to given email</p>
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
+      {/* SECTION 2 */}
+      <motion.div
+        className={styles.section2}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeUp}
+      >
+        <div className={styles.title}>
+          <h1>About the book</h1>
+          <p>Inside the Pages: Confidence, Visibility, and Self-Expression</p>
         </div>
-    )
+
+        <motion.div className={styles.videoContainer} variants={fadeUp}>
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Book intro video" frameBorder="0"></iframe>
+        </motion.div>
+
+        <motion.div
+          className={styles.bookGridItems}
+          variants={stagger}
+        >
+          {bookLearnings.map((item, index) => (
+            <motion.div
+              className={styles.bookGridItem}
+              key={index}
+              variants={fadeUp}
+              whileHover={{ scale: 1.03 }}
+            >
+              <img src={item.svg} alt={item.title} />
+              <h1>{item.title}</h1>
+              <p>{item.text}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+    </div>
+  )
 }
 
 export default Product
