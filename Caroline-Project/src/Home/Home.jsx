@@ -121,16 +121,16 @@ const Home = () => {
                     </div>
 
                     <motion.div className={styles.homeButtons} variants={softFadeUp}>
-                        <motion.button className={styles.homeButton1} whileHover={buttonHover}>Learn More</motion.button>
-                        <motion.button className={styles.homeButton2} whileHover={buttonHover}>BUY PRODUCT</motion.button>
+                        <motion.a href="mailto:Team.Carolinelabouchere@gmail.com" className={styles.homeButton1} whileHover={buttonHover}>Get In Touch</motion.a>
+                        <motion.a href="#product" className={styles.homeButton2} whileHover={buttonHover}>BUY PRODUCT</motion.a>
                     </motion.div>
                 </div>
                 <div className={styles.homeSocials}>
                     <hr className={styles.line1} />
                     <motion.div className={styles.socialsContainer} variants={containerStagger}>
-                        <motion.i variants={softFadeIn} className="ri-instagram-line"></motion.i>
-                        <motion.i variants={softFadeIn} className="ri-youtube-line"></motion.i>
-                        <motion.i variants={softFadeIn} className="ri-facebook-circle-fill"></motion.i>
+                        <motion.a href="https://www.instagram.com/carolinelabouchere" target="_blank" variants={softFadeIn}><i className="ri-instagram-line"></i></motion.a>
+                        <motion.a href="https://www.youtube.com/@CarolineLabouchere" target="_blank" variants={softFadeIn}><i className="ri-youtube-line"></i></motion.a>
+                        <motion.a href="https://www.facebook.com/carolinelabouchereisgrey" target="_blank" variants={softFadeIn}><i className="ri-facebook-circle-fill"></i></motion.a>
                     </motion.div>
                     <hr className={styles.line2} />
                 </div>

@@ -63,7 +63,7 @@
     margin-bottom: 4rem;
 }
 
-.aboutButtons button:first-child {
+.aboutButtons .buttonLink:first-child {
     border: 3px solid var(--accent-color2);
     padding: 1rem;
     padding-left: 3rem;
@@ -73,24 +73,27 @@
     font-family: "Crimson Text", serif;
     font-size: 1rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.aboutButtons button:hover {
+.aboutButtons .buttonLink:hover {
     background-color: var(--accent-color2);
     color: var(--text-color-white);
 }
 
-.aboutButtons button:last-child {
-
-
+.aboutButtons .buttonLink:last-child {
     background-color: var(--accent-color2);
-    border: none;
-
+    border: 3px solid var(--accent-color2);
     color: var(--text-color-white);
     padding: 1rem;
     padding-left: 4rem;
     padding-right: 4rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
 }
 
 /* Stats Grid */

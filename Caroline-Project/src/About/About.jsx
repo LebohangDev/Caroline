@@ -47,8 +47,8 @@ const About = () => {
 
                 </div>
                 <motion.div className={styles.aboutButtons} variants={softFadeUp}>
-                    <motion.button whileHover={buttonHover}>Get In Touch</motion.button>
-                    <motion.button whileHover={buttonHover}>Portfolio</motion.button>
+                    <motion.a href="mailto:Team.Carolinelabouchere@gmail.com" whileHover={buttonHover} className={styles.buttonLink}>Get In Touch</motion.a>
+                    <motion.a href="Images/Portfolio/My_Portfolio_Caroline_Labouchere.pdf" download whileHover={buttonHover} className={styles.buttonLink}>Portfolio</motion.a>
                 </motion.div>
                 <div className={styles.aboutGrid}>
                     <motion.div className={styles.aboutGridItems} variants={containerStagger}>

@@ -13,12 +13,13 @@
 
 }
 
-.nav p {
+.nav p a {
 
     font-size: 1.8rem;
     color: var(--text-color2);
     margin: 0;
 }
+
 
 .nav ul {
     display: flex;

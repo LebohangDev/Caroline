@@ -16,7 +16,7 @@ const Nav = ({ activeNav, setActiveNav }) => {
                 animate="visible"
                 variants={navVariants}
             >
-                <motion.p variants={softFadeUp}>@CGC</motion.p>
+                <motion.p variants={softFadeUp}> <a href="https://www.cgc.global/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnwqk8vDHLqIurIWtwfHKp5lbPLKoBL9Zny0WzgCVrEzTeOBDQKMgEYXQHQqA_aem_rPG_qT-JKK24nZT54iJijg">@CGC</a></motion.p>
                 <motion.ul variants={navVariants}>
                     <motion.li variants={softFadeUp} className={activeNav === 'Home' ? styles.active : ''}>
                         <a href="#home" onClick={() => setActiveNav('Home')}>Home</a>
@@ -28,7 +28,7 @@ const Nav = ({ activeNav, setActiveNav }) => {
                         <a href="#product" onClick={() => setActiveNav('Product')}>Product</a>
                     </motion.li>
                     <motion.li variants={softFadeUp} className={activeNav === 'Portfolio' ? styles.active : ''}>
-                        <a href="#portfolio" download={true} onClick={() => setActiveNav('Portfolio')}>Portfolio</a>
+                        <a href="Images/Portfolio/My_Portfolio_Caroline_Labouchere.pdf" download onClick={() => setActiveNav('Portfolio')}>Portfolio</a>
                     </motion.li>
                     <motion.li variants={softFadeUp} className={activeNav === 'Gallery' ? styles.active : ''}>
                         <a href="#gallery" onClick={() => setActiveNav('Gallery')}>Gallery</a>
@@ -70,7 +70,7 @@ const Nav = ({ activeNav, setActiveNav }) => {
                                     <a href="#product" onClick={() => { setActiveNav('Product'); setHamMenu(false) }}>Product</a>
                                 </li>
                                 <li className={activeNav === 'Portfolio' ? styles.active : ''}>
-                                    <a href="#portfolio" download={true} onClick={() => { setActiveNav('Portfolio'); setHamMenu(false) }}>Portfolio</a>
+                                    <a href="Images/Portfolio/My_Portfolio_Caroline_Labouchere.pdf" download onClick={() => { setActiveNav('Portfolio'); setHamMenu(false) }}>Portfolio</a>
                                 </li>
                                 <li className={activeNav === 'Gallery' ? styles.active : ''}>
                                     <a href="#gallery" onClick={() => { setActiveNav('Gallery'); setHamMenu(false) }}>Gallery</a>

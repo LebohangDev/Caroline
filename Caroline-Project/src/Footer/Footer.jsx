@@ -19,14 +19,14 @@ const Footer = ({ setActiveNav }) => {
                     variants={containerStagger}
                 >
                     <motion.div className={styles.signatureContainer} variants={softFadeUp}>
-                        <h1>@CGC</h1>
+                        <p><a href="https://www.cgc.global/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnwqk8vDHLqIurIWtwfHKp5lbPLKoBL9Zny0WzgCVrEzTeOBDQKMgEYXQHQqA_aem_rPG_qT-JKK24nZT54iJijg">@CGC</a></p>
                     </motion.div>
                     <motion.div className={styles.media} variants={softFadeUp}>
                         <p>Media</p>
                         <motion.div className={styles.socialIcons} variants={containerStagger}>
-                            <motion.i variants={softFadeIn} whileHover={{ scale: 1.1, rotate: 3 }} className="ri-instagram-line"></motion.i>
-                            <motion.i variants={softFadeIn} whileHover={{ scale: 1.1, rotate: 3 }} className="ri-facebook-fill"></motion.i>
-                            <motion.i variants={softFadeIn} whileHover={{ scale: 1.1, rotate: 3 }} className="ri-youtube-line"></motion.i>
+                            <motion.a href="https://www.instagram.com/carolinelabouchere" target="_blank" variants={softFadeIn} whileHover={{ scale: 1.1, rotate: 3 }}><i className="ri-instagram-line"></i></motion.a>
+                            <motion.a href="https://www.facebook.com/carolinelabouchereisgrey" target="_blank" variants={softFadeIn} whileHover={{ scale: 1.1, rotate: 3 }}><i className="ri-facebook-fill"></i></motion.a>
+                            <motion.a href="https://www.youtube.com/@CarolineLabouchere" target="_blank" variants={softFadeIn} whileHover={{ scale: 1.1, rotate: 3 }}><i className="ri-youtube-line"></i></motion.a>
                         </motion.div>
                     </motion.div>
                     <div className={styles.footerNav}>
@@ -34,7 +34,7 @@ const Footer = ({ setActiveNav }) => {
                             <motion.li variants={softFadeUp}><a href="#Home" onClick={() => setActiveNav('Home')}>Home</a></motion.li>
                             <motion.li variants={softFadeUp}><a href="#About" onClick={() => setActiveNav('About')}>About</a></motion.li>
                             <motion.li variants={softFadeUp}><a href="#Product" onClick={() => setActiveNav('Product')}>Product</a></motion.li>
-                            <motion.li variants={softFadeUp}><a href="#Portfolio" onClick={() => setActiveNav('Portfolio')}>Portfolio</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="/Images/Portfolio/My_Portfolio%20_Caroline%20Labouchere.pdf" download onClick={() => setActiveNav('Portfolio')}>Portfolio</a></motion.li>
                             <motion.li variants={softFadeUp}><a href="#Gallery" onClick={() => setActiveNav('Gallery')}>Gallery</a></motion.li>
                         </motion.ul>
                     </div>

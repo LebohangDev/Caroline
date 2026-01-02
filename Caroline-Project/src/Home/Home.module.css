@@ -151,6 +151,9 @@
     color: var(--text-color2);
     font-family: "Crimson Text", serif;
     font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .homeButton2 {
@@ -163,6 +166,9 @@
     padding-left: 3rem;
     padding-right: 3rem;
     text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
 
 }
 
@@ -184,15 +190,20 @@
     font-size: 1.2rem;
 }
 
-
+.socialsContainer a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
 
 .socialsContainer i {
     font-size: 1.3rem;
-    color: var(--accent-color);
+    color: inherit;
     transition: all 0.3s ease;
+    text-decoration: none;
+
 }
 
-.socialsContainer i:hover {
+.socialsContainer a:hover {
     color: var(--accent-color2);
     cursor: pointer;
 }
