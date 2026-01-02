@@ -5,7 +5,7 @@ import styles from './Product.module.css'
 const bookLearnings =
     [
         {
-            svg: "Images/Icons/book_icon1.svg", // replace with your SVG import or path
+            svg: "Images/Icons/book_icon1.svg",
             title: "Claim Your Visibility",
             text: "How to stop fading into the background and confidently take up space at every stage of life."
         },
@@ -43,7 +43,6 @@ const Product = () => {
   return (
     <div id="product" className={styles.productContainer}>
 
-      {/* SECTION 1 */}
       <motion.div
         className={styles.section1}
         initial="hidden"
@@ -54,8 +53,6 @@ const Product = () => {
         <motion.div className={styles.productContent1} variants={fadeUp}>
           <motion.div
             className={styles.productImage}
-            // whileHover={{ scale: 1.02 }}
-            // transition={{ duration: 0.3 }}
           >
             <img src="Images/Caroline_Images/ebook_cover2.png" alt="Ebook cover" />
           </motion.div>
@@ -83,7 +80,7 @@ const Product = () => {
         </motion.div>
       </motion.div>
 
-      {/* SECTION 2 */}
+
       <motion.div
         className={styles.section2}
         initial="hidden"
