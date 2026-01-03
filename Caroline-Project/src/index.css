@@ -70,6 +70,17 @@ button:hover {
 
 }
 
+.activeSection {
+  animation: fadeIn 0.5s ease-in-out;
+  display: block;
+
+}
+
+.notActiveSection {
+  display: none;
+}
+
+
 .main {
   grid-column: 1 / -1;
 }

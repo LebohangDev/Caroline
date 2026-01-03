@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^8.6.0",
     "framer-motion": "^12.23.26",
     "prop-types": "^15.8.1",
     "react": "^19.2.0",

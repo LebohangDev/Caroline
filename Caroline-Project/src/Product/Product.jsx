@@ -1,33 +1,93 @@
-import React from 'react'
 import styles from './Product.module.css'
 import { motion } from 'framer-motion';
+import { loadStripe } from "@stripe/stripe-js";
+import { useState } from 'react'
+
+
 import { softFadeUp, containerStagger, softFadeIn, buttonHover } from '../animations';
 
-const bookLearnings =
-    [
-        {
-            svg: "Images/Icons/book_icon1.svg", // replace with your SVG import or path
-            title: "Claim Your Visibility",
-            text: "How to stop fading into the background and confidently take up space at every stage of life."
-        },
-        {
-            svg: "Images/Icons/book_icon2.svg",
-            title: "Rewrite the Narrative",
-            text: "How to unlearn age-based limits and reframe experience as power, not decline."
-        },
-        {
-            svg: "Images/Icons/book_icon3.svg",
-            title: "Intentional Style",
-            text: "How personal style becomes a tool for visibility, presence, and self-respect, not trends."
-        },
-        {
-            svg: "Images/Icons/book_icon4.svg",
-            title: "Own Your Next Chapter",
-            text: "How to show up boldly, speak confidently, and move forward without apology, at any age."
-        }
-    ];
+
+
+
+
 
 const Product = () => {
+
+    const [email, setEmail] = useState('');
+    const [isValidEmail, setIsValidEmail] = useState(false);
+
+
+
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    };
+
+    const handleEmailChange = (e) => {
+        const val = e.target.value;
+        setEmail(val);
+        setIsValidEmail(validateEmail(val));
+    };
+
+
+
+    const bookLearnings =
+        [
+            {
+                svg: "Images/Icons/book_icon1.svg", // replace with your SVG import or path
+                title: "Claim Your Visibility",
+                text: "How to stop fading into the background and confidently take up space at every stage of life."
+            },
+            {
+                svg: "Images/Icons/book_icon2.svg",
+                title: "Rewrite the Narrative",
+                text: "How to unlearn age-based limits and reframe experience as power, not decline."
+            },
+            {
+                svg: "Images/Icons/book_icon3.svg",
+                title: "Intentional Style",
+                text: "How personal style becomes a tool for visibility, presence, and self-respect, not trends."
+            },
+            {
+                svg: "Images/Icons/book_icon4.svg",
+                title: "Own Your Next Chapter",
+                text: "How to show up boldly, speak confidently, and move forward without apology, at any age."
+            }
+        ];
+    const product = [
+        {
+            type: "ebook",
+            title: "Becoming Visible at Any Age",
+            description: "Guide to owning your presence, personal style, and confidence, no matter where you are in life.",
+            price: 9,
+            currency: "usd",
+            image: "https://lebohangdev.github.io/Caroline/Images/ebook/ebook_cover2.png",
+            email: email,
+            successUrl: "https://lebohangdev.github.io/Caroline/?payment=success",
+            cancelUrl: "https://lebohangdev.github.io/Caroline/?payment=cancel",
+
+
+        }
+    ]
+
+
+
+
+
+
+    async function handleCheckout(productPayload) {
+        const res = await fetch("http://localhost:3000/api/create-checkout-session", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(productPayload),
+        });
+
+        const data = await res.json();
+        console.log("Session response:", data);
+
+        // redirect to stripe checkout
+        window.location.href = data.url;
+    }
 
 
 
@@ -57,12 +117,13 @@ const Product = () => {
 
                     </motion.div>
                     <motion.div className={styles.productEmailField} variants={softFadeUp}>
-                        <input type="text" placeholder="Enter your email" />
-                        <motion.button whileHover={buttonHover}>GET STARTED NOW!</motion.button>
+                        <p className={isValidEmail ? styles.valid : styles.invalid}>*Enter a valid email</p>
+                        <input type="text" value={email} placeholder="Enter your email" onChange={handleEmailChange} />
+                        <motion.button disabled={!isValidEmail} whileHover={isValidEmail ? buttonHover : ""} onClick={() => { handleCheckout(product[0]); setEmail(''); }}>GET STARTED NOW!</motion.button>
                     </motion.div>
                     <motion.div className={styles.priceContainer} variants={softFadeUp}>
                         <h1>Price</h1>
-                        <p>$15</p>
+                        <p>$9</p>
                         <p>After payment, eBook will be sent to given email</p>
                     </motion.div>
                 </motion.div>
