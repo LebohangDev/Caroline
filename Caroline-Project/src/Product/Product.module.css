@@ -332,6 +332,12 @@
         margin-top: 1rem;
     }
 
+    .productEmailField .invalid {
+        text-align: left;
+    }
+
+
+
     .priceContainer {
         order: 4;
         padding: 0 5%;
