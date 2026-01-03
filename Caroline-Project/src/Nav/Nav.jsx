@@ -85,8 +85,9 @@ const Nav = ({ activeNav, setActiveNav }) => {
                                 </h1>
 
                                 <div className={styles.socials}>
-                                    <i className="ri-instagram-line" style={{ color: 'var(--accent-primary)' }}></i>
-                                    <i className="ri-linkedin-fill" style={{ color: 'var(--accent-primary)' }}></i>
+                                    <a href="https://www.instagram.com/carolinelabouchere" target="_blank"><i className="ri-instagram-line"></i></a>
+                                    <a href="https://www.youtube.com/@CarolineLabouchere" target="_blank"><i className="ri-youtube-line"></i></a>
+                                    <a href="https://www.facebook.com/carolinelabouchereisgrey" target="_blank"><i className="ri-facebook-circle-fill"></i></a>
                                 </div>
                             </div>
 
