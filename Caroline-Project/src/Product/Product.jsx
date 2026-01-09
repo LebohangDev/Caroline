@@ -59,7 +59,7 @@ const Product = () => {
             type: "ebook",
             title: "Becoming Visible at Any Age",
             description: "Guide to owning your presence, personal style, and confidence, no matter where you are in life.",
-            price: 9,
+            price: 29,
             currency: "usd",
             image: "https://lebohangdev.github.io/Caroline/Images/ebook/ebook_cover2.png",
             email: email,
@@ -126,7 +126,7 @@ const Product = () => {
                     </motion.div>
                     <motion.div className={styles.priceContainer} variants={softFadeUp}>
                         <h1>Price</h1>
-                        <p>$9</p>
+                        <p>$29</p>
                         <p>After payment, eBook will be sent to given email</p>
                     </motion.div>
                 </motion.div>
