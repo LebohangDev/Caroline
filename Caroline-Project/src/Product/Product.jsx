@@ -57,7 +57,7 @@ const Product = () => {
     const product = [
         {
             type: "ebook",
-            title: "Becoming Visible at Any Age",
+            title: "Aging Without Apology",
             description: "Guide to owning your presence, personal style, and confidence, no matter where you are in life.",
             price: 29,
             currency: "usd",
