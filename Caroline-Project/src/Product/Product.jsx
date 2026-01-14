@@ -126,8 +126,8 @@ const Product = () => {
                     </motion.div>
                     <motion.div className={styles.priceContainer} variants={softFadeUp}>
                         <h1>Price</h1>
-                        <p>$1</p>
-                        <p>After payment, eBook will be sent to given email</p>
+                        <p>$29</p>
+                        <p>After payment, eBook will be sent to given email (Check spam/junk folder if you dont see it in a few minutes.)</p>
                     </motion.div>
                 </motion.div>
 
