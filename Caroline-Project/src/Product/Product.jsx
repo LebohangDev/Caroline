@@ -59,7 +59,7 @@ const Product = () => {
             type: "ebook",
             title: "Aging Without Apology",
             description: "Guide to owning your presence, personal style, and confidence, no matter where you are in life.",
-            price: 1,
+            price: 29,
             currency: "usd",
             image: "https://lebohangdev.github.io/Caroline/Images/ebook/ebook_cover2.png",
             email: email,
