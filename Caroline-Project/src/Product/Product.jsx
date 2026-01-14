@@ -144,7 +144,7 @@ const Product = () => {
                     <motion.p variants={softFadeUp}>Inside the Pages: Confidence, Visibility, and Self-Expression</motion.p>
                 </div>
                 <motion.div className={styles.videoContainer} variants={softFadeUp}>
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"></iframe>
+                    <iframe src="https://www.youtube.com/embed/Lz-QdJ_fK5E?si=LBUNnvjiTYnpuiLp&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </motion.div>
                 <div className={styles.bookGrid}>
                     <motion.div className={styles.bookGridItems} variants={containerStagger}>

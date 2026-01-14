@@ -221,7 +221,7 @@
     aspect-ratio: 16 / 9;
     margin: 0 auto 5rem auto;
     background-color: var(--bg-color2);
-    border-radius: 0;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
