@@ -31,11 +31,11 @@ const Footer = ({ setActiveNav }) => {
                     </motion.div>
                     <div className={styles.footerNav}>
                         <motion.ul variants={containerStagger}>
-                            <motion.li variants={softFadeUp}><a href="#Home" onClick={() => setActiveNav('Home')}>Home</a></motion.li>
-                            <motion.li variants={softFadeUp}><a href="#About" onClick={() => setActiveNav('About')}>About</a></motion.li>
-                            <motion.li variants={softFadeUp}><a href="#Product" onClick={() => setActiveNav('Product')}>Product</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="#home" onClick={() => setActiveNav('Home')}>Home</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="#about" onClick={() => setActiveNav('About')}>About</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="#product" onClick={() => setActiveNav('Product')}>Product</a></motion.li>
                             <motion.li variants={softFadeUp}><a href="/Images/Portfolio/My_Portfolio_Caroline_Labouchere.pdf" download onClick={() => setActiveNav('Portfolio')}>Portfolio</a></motion.li>
-                            <motion.li variants={softFadeUp}><a href="#Gallery" onClick={() => setActiveNav('Gallery')}>Gallery</a></motion.li>
+                            <motion.li variants={softFadeUp}><a href="#gallery" onClick={() => setActiveNav('Gallery')}>Gallery</a></motion.li>
                         </motion.ul>
                     </div>
                 </motion.div>
