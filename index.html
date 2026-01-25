@@ -7,7 +7,17 @@
   <link rel="icon" type="svg+xml" href="/assets/logo-BfVGa5Nj.svg" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet">
   <title>Caroline Labouchere</title>
-  <script type="module" crossorigin src="/assets/index-DXs1H07X.js"></script>
+  <script>
+    // Recovers the path from sessionStorage after a 404 redirect
+    (function () {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <script type="module" crossorigin src="/assets/index-DjV5E3cY.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-DqU6KWe6.css">
 </head>
 
