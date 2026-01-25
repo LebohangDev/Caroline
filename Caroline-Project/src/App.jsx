@@ -24,17 +24,20 @@ function App() {
       if (hash) {
         sectionId = hash.replace('#', '').toLowerCase();
       }
-      // Then check Path (e.g. /product or /Caroline/product)
+      // Then check Path (e.g. /product or /Caroline/product or /_product)
       else if (path && path !== '/') {
         // Remove leading/trailing slashes and split
         const pathSegments = path.replace(/^\/|\/$/g, '').split('/');
 
-        // Find the last segment that matches a known section
+        // Find match allowing for optional _ prefix
         const knownSections = ['home', 'about', 'product', 'gallery'];
-        const matchedSection = pathSegments.find(segment => knownSections.includes(segment.toLowerCase()));
+        const matchedSegment = pathSegments.find(segment => {
+          const clean = segment.replace(/^_/, '').toLowerCase();
+          return knownSections.includes(clean);
+        });
 
-        if (matchedSection) {
-          sectionId = matchedSection.toLowerCase();
+        if (matchedSegment) {
+          sectionId = matchedSegment.replace(/^_/, '').toLowerCase();
         }
       }
 
