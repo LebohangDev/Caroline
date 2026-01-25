@@ -14,6 +14,45 @@ function App() {
 
 
   useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      const path = window.location.pathname;
+
+      let sectionId = '';
+
+      // Check Hash first
+      if (hash) {
+        sectionId = hash.replace('#', '').toLowerCase();
+      }
+      // Then check Path (e.g. /product or /Caroline/product)
+      else if (path && path !== '/') {
+        // Extract the last segment of the path
+        const pathSegments = path.split('/').filter(p => p);
+        if (pathSegments.length > 0) {
+          sectionId = pathSegments[pathSegments.length - 1].toLowerCase();
+        }
+      }
+
+      if (sectionId) {
+        // Capitalize for activeNav state
+        const sectionName = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
+        const validSections = ['Home', 'About', 'Product', 'Gallery'];
+
+        if (validSections.includes(sectionName)) {
+          setActiveNav(sectionName);
+          setTimeout(() => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
+        }
+      }
+    };
+
+    // Handle initial load
+    handleHashScroll();
+
     const params = new URLSearchParams(window.location.search);
     const payment = params.get("payment");
     if (payment === "success") setPaymentActive("PaymentSuccess");

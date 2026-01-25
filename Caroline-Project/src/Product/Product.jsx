@@ -122,7 +122,7 @@ const Product = () => {
                     <motion.div className={styles.productEmailField} variants={softFadeUp}>
                         <p className={isValidEmail ? styles.valid : styles.invalid}>*Enter a valid email</p>
                         <input type="text" value={email} placeholder="Enter your email" onChange={handleEmailChange} />
-                        <motion.button disabled={!isValidEmail} whileHover={isValidEmail ? buttonHover : ""} onClick={() => { handleCheckout(product[0]); setEmail(''); }}>GET STARTED NOW!</motion.button>
+                        <motion.button disabled={!isValidEmail} whileHover={isValidEmail ? buttonHover : ""} onClick={() => { handleCheckout(product[0]); setEmail(''); }}>COMING SOON!</motion.button>
                     </motion.div>
                     <motion.div className={styles.priceContainer} variants={softFadeUp}>
                         <h1>Price</h1>
