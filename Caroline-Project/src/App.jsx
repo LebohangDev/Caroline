@@ -26,10 +26,15 @@ function App() {
       }
       // Then check Path (e.g. /product or /Caroline/product)
       else if (path && path !== '/') {
-        // Extract the last segment of the path
-        const pathSegments = path.split('/').filter(p => p);
-        if (pathSegments.length > 0) {
-          sectionId = pathSegments[pathSegments.length - 1].toLowerCase();
+        // Remove leading/trailing slashes and split
+        const pathSegments = path.replace(/^\/|\/$/g, '').split('/');
+
+        // Find the last segment that matches a known section
+        const knownSections = ['home', 'about', 'product', 'gallery'];
+        const matchedSection = pathSegments.find(segment => knownSections.includes(segment.toLowerCase()));
+
+        if (matchedSection) {
+          sectionId = matchedSection.toLowerCase();
         }
       }
 
